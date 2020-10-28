@@ -15,7 +15,6 @@ class ArticleController extends Controller
     {
         // モデル名::テーブル全件取得
         $articles = Article::all();
-        // Itemsティレクトリーの中のindexページを指定し、itemsの連想配列を代入
         return view('articles.index', ['articles' => $articles]);
     }
 
@@ -63,7 +62,7 @@ class ArticleController extends Controller
         // 登録したらindexに戻る
         return redirect('/articles');
     }
-    
+
     public function destroy($id)
     {
         $article = Article::find($id);

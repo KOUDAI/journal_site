@@ -8,15 +8,10 @@
 </head>
 <body>
     <h1>論文詳細 </h1>
-
     <p>タイトル：{{ $article->title }}</p>
-
     <p>{{ $article->body }}</p>
-
     <a href="/articles/"><button>一覧へ戻る</button></a><br>
-
     <a href="/articles/{{ $article->id}}/edit"> <input type="submit" value="編集する"></a>
-    
     <form action="/articles/{{ $article->id }}" method="post">
         @csrf
         @method('DELETE')
